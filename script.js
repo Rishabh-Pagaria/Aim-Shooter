@@ -8,7 +8,7 @@ const gameover = document.querySelector('.gameover');
 
 
 var score = 0;
-var timerLeft = 7;
+var timerLeft = 15;
 var highscore = 0;
 
 window.onload = ()=>{
@@ -35,7 +35,7 @@ const gameOver = ()=>{
         highscoreText.innerHTML = `Highscore ${highscore}`;
     }
     score = 0;
-    timeLeft = 7+2;
+    timeLeft = 15+2;
     scoreText.innerHTML = score;
     timerText.innerHTML = timeLeft;
 }
@@ -43,7 +43,7 @@ const timer = ()=>{
     if(timerLeft === 0){
         gameover.play();
         gameOver();
-        timerLeft = 7+2;
+        timerLeft = 15+2;
     }
     timerLeft -= 1;
     timerText.innerHTML = timerLeft;
