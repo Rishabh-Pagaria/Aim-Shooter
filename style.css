@@ -18,6 +18,54 @@ img{
     height: 100%;
     width: 100%;
 }
+.main-page{
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    width: 100vw;
+    z-index: 2;
+    transition: all 0.5s ease-in-out;
+}
+.head-img img{
+    width: 50%;
+    height: 30vh;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.game-text{
+    display: block;
+    font-family: 'Press Start 2P', outline;
+    font-size:1.3rem;
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #000000;
+    letter-spacing: .05em;
+    text-shadow:  
+      3px 3px 0px rgb(255, 255, 255),
+      5.5px 5.5px 0px rgb(255, 0, 0);
+}
+.play_game{
+    position: fixed;
+    display: inline-block;
+    background: black;
+    padding:20px;
+    color: #ffffff;
+    text-shadow:  
+      2px 2px 0px rgb(0, 0, 0),
+      3.50px 3.5px 0px rgb(255, 0, 0);
+    font-size: 1.3rem;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+}
+.play_game:active{
+    font-size:1rem;
+}
 .cursor{
     position: fixed;
     top: 50%;
@@ -59,3 +107,4 @@ img{
     font-size: 1.8rem;
     color: rgba(21, 255, 0, 0.863);
 }
+

@@ -5,10 +5,12 @@ const timerText = document.querySelector('.timer');
 const highscoreText = document.querySelector('.highscore');
 const gunshot = document.querySelector('.gunshot');
 const gameover = document.querySelector('.gameover');
-
+const menupage = document.querySelector('.main-page');
+const playGame = document.querySelector('.play_game');
+const themeSong = document.querySelector('.theme');
 
 var score = 0;
-var timerLeft = 7;
+var timerLeft = 15;
 var highscore = 0;
 
 window.onload = ()=>{
@@ -16,10 +18,20 @@ window.onload = ()=>{
         highscore = localStorage.getItem('highscore');
         highscoreText.innerHTML = `Highscore ${highscore}`;
     }
+    themeSong.currentTime = 0;
+    themeSong.play();
     
     scoreText.innerHTML = score;
     timerText.innerHTML = timerLeft;
     changePosition();
+}
+menupage.addEventListener('click', (e) => e.stopPropagation());
+const fadePage = ()=>{
+    themeSong.pause();
+    menupage.style.opacity = 0;
+    setTimeout(()=>{
+        menupage.style.display = "none";
+    },100);
     play();
 }
 const play = ()=>{
@@ -35,7 +47,7 @@ const gameOver = ()=>{
         highscoreText.innerHTML = `Highscore ${highscore}`;
     }
     score = 0;
-    timeLeft = 7+2;
+    timeLeft = 15+2;
     scoreText.innerHTML = score;
     timerText.innerHTML = timeLeft;
 }
@@ -43,7 +55,7 @@ const timer = ()=>{
     if(timerLeft === 0){
         gameover.play();
         gameOver();
-        timerLeft = 7+2;
+        timerLeft = 15+2;
     }
     timerLeft -= 1;
     timerText.innerHTML = timerLeft;
@@ -70,3 +82,4 @@ const scoreIncrease = ()=>{
 }
 
 target.addEventListener('click', scoreIncrease);
+playGame.addEventListener('click', fadePage);
