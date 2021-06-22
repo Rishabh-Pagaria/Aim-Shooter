@@ -31,7 +31,7 @@ const fadePage = ()=>{
     menupage.style.opacity = 0;
     setTimeout(()=>{
         menupage.style.display = "none";
-    },100);
+    },500);
     play();
 }
 const play = ()=>{

@@ -24,7 +24,7 @@ img{
     height: 100vh;
     width: 100vw;
     z-index: 2;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in;
 }
 .head-img img{
     width: 50%;
